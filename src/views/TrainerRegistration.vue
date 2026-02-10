@@ -3,17 +3,17 @@
     <h2>Trainer Registration</h2>
 
     <form @submit.prevent="submitForm">
-      <input v-model="trainer.trainerCode" placeholder="Trainer Code" required />
-      <input v-model="trainer.fullName" placeholder="Full Name" required />
+      <input v-model="trainer.trainerCode" placeholder="Trainer Code" required /><br><br><br>
+      <input v-model="trainer.fullName" placeholder="Full Name" required /><br><br>
 
       <select v-model="trainer.course" required>
         <option disabled value="">Assign Course</option>
         <option>Software Development</option>
         <option>Networking</option>
         <option>Multimedia</option>
-      </select>
+      </select><br><br>
 
-      <input v-model="trainer.email" placeholder="Email Address" required />
+      <input v-model="trainer.email" placeholder="Email Address" required /><br><br>
 
       <button type="submit">Register Trainer</button>
     </form>

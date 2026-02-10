@@ -19,12 +19,15 @@
     </nav>
     <router-view />
     <LoginComponent/>
+    <LoginComponent1/>
+    <AboutusComponent/>
     <FooterComponent/>
   </div>
 </template>
 <script setup>
 import { onMounted, onBeforeUnmount } from "vue";
-import LoginComponent from "./components/LoginComponent.vue";
+import AboutusComponent from "./components/AboutusComponent.vue";
+import LoginComponent1 from "./components/LoginComponent1.vue";
 import FooterComponent from "./components/FooterComponent.vue";
 
 const handleScroll = () => {
