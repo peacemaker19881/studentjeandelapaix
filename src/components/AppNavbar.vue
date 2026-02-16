@@ -1,32 +1,30 @@
 <template>
-  <nav class="navbar">
-    <h3>Course Document System</h3>
+  <nav class="navbar" v-if="role">
+    <ul>
 
-    <ul v-if="role">
-      <!-- Deputy -->
-      <li v-if="role === 'deputy'">
-        <router-link to="/dashboard">Dashboard</router-link>
-      </li>
-      <li v-if="role === 'deputy'">
-        <router-link to="/students">Students</router-link>
-      </li>
-      <li v-if="role === 'deputy'">
-        <router-link to="/trainers">Trainers</router-link>
-      </li>
+      <!-- ADMIN -->
+      <template v-if="role === 'admin'">
+        <li><router-link to="/register-student">Register Student</router-link></li>
+        <li><router-link to="/register-trainer">Register Trainer</router-link></li>
+        <li><router-link to="/documents">View Documents</router-link></li>
+        <li><router-link to="/trainers">Registered Trainers</router-link></li>
+        <li><router-link to="/students">Registered Students</router-link></li>
+      </template>
 
-      <!-- Trainer -->
-      <li v-if="role === 'trainer'">
-        <router-link to="/upload">Upload Documents</router-link>
-      </li>
+      <!-- TRAINER -->
+      <template v-if="role === 'trainer'">
+        <li><router-link to="/upload">Upload Document</router-link></li>
+        <li><router-link to="/students">Registered Students</router-link></li>
+        <li><router-link to="/about">About Us</router-link></li>
+      </template>
 
-      <!-- Student -->
-      <li v-if="role === 'student'">
-        <router-link to="/documents">View Documents</router-link>
-      </li>
+      <!-- STUDENT -->
+      <template v-if="role === 'student'">
+        <li><router-link to="/documents">Documents</router-link></li>
+        <li><router-link to="/about">About Us</router-link></li>
+      </template>
 
-      <li>
-        <button @click="logout">Logout</button>
-      </li>
+      <li><button @click="logout">Logout</button></li>
     </ul>
   </nav>
 </template>

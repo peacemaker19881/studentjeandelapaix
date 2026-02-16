@@ -1,27 +1,28 @@
-import { createRouter, createWebHistory } from "vue-router";
+import { createRouter, createWebHistory } from 'vue-router'
 
-import Login from "@/views/Login.vue";
-import Dashboard from "@/views/Dashboard.vue";
-import StudentRegistration from "@/views/StudentRegistration.vue";
-import TrainerRegistration from "@/views/TrainerRegistration.vue";
-import UploadDocuments from "@/views/UploadDocuments.vue";
-import ViewDocuments from "@/views/ViewDocuments.vue";
+import HomeView from '@/views/HomeView.vue';
+import AboutusComponent from '@/components/AboutusComponent.vue';
+import TrainerRegistration from '@/views/TrainerRegistration.vue';
+import StudentRegistration from '@/views/StudentRegistration.vue';
+// import TrainerList from '@views/TrainerList.vue';
+// import StudentList from '@views/StudentList.vue';
+// import Documents from '@views/Documents.vue';
+import UploadDocuments from '@/views/UploadDocuments.vue';
 
 const routes = [
-  { path: "/", name:Login, component: Login },
+  { path: "/", component: HomeView },
 
-  { path: "/dashboard", component: Dashboard, meta: { role: "deputy" } },
-  { path: "/students", component: StudentRegistration, meta: { role: "deputy" } },
-  { path: "/trainers", component: TrainerRegistration, meta: { role: "deputy" } },
+  // ADMIN
+  { path: "/register-student", component: StudentRegistration, meta: { roles: ["admin"] } },
+  { path: "/register-trainer", component: TrainerRegistration, meta: { roles: ["admin"] } },
+  { path: "/trainers", component: TrainerList, meta: { roles: ["admin"] } },
+  { path: "/students", component: StudentList, meta: { roles: ["admin", "trainer"] } },
+  { path: "/documents", component: Documents, meta: { roles: ["admin", "student"] } },
+  
+  // TRAINER
+  { path: "/upload", component: UploadDocuments, meta: { roles: ["trainer"] } },
 
-  { path: "/upload", component: UploadDocuments, meta: { role: "trainer" } },
-
-  { path: "/documents", component: ViewDocuments, meta: { role: "student" } }
+  // SHARED
+  { path: "/aboutus", component: AboutusComponent, meta: { roles: ["trainer", "student"] } }
 ];
-
-const router = createRouter({
-  history: createWebHistory(),
-  routes
-});
-
-export default router
+export default routes

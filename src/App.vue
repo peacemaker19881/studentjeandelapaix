@@ -8,18 +8,15 @@
         <span class="school-name">GS BUMBA TSS</span>
       </div>
       <!-- Right: Navigation Links -->
-      <ul class="nav-links">
-        <li><router-link to="/">Login</router-link></li>
-        <li><router-link to="/dashboard">DashBoard</router-link></li>
-        <li><router-link to="/trainers">Trainers</router-link></li>
-        <li><router-link to="/students">Student</router-link></li>
-        <li><router-link to="/upload">Upload</router-link></li>
-        <li><router-link to="/documents">Documents</router-link></li>
+       <ul class="nav-links">
+        <li><router-link to="/">Home</router-link></li>
+        <li><router-link to="/register-student">Student</router-link></li>
+        <li><router-link to="/register-trainer">Trainer</router-link></li>
+        <li><router-link to="/upload">Upload Document</router-link></li>
+        <li><router-link to="/aboutus">AboutUs</router-link></li>
       </ul>
     </nav>
     <router-view />
-    <LoginComponent/>
-    <LoginComponent1/>
     <AboutusComponent/>
     <FooterComponent/>
   </div>
@@ -27,7 +24,6 @@
 <script setup>
 import { onMounted, onBeforeUnmount } from "vue";
 import AboutusComponent from "./components/AboutusComponent.vue";
-import LoginComponent1 from "./components/LoginComponent1.vue";
 import FooterComponent from "./components/FooterComponent.vue";
 
 const handleScroll = () => {

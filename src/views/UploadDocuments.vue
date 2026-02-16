@@ -3,16 +3,16 @@
     <h2>Upload Course Documents</h2>
 
     <form @submit.prevent="submitForm">
-      <input v-model="document.title" placeholder="Document Title" required />
+      <input v-model="document.title" placeholder="Document Title" required /> <br><br>
 
       <select v-model="document.course" required>
         <option disabled value="">Select Course</option>
         <option>Software Development</option>
-        <option>Networking</option>
-        <option>Multimedia</option>
-      </select>
+        <option>Computer System and Technology</option>
+        <option>Accounting</option>
+      </select><br><br>
 
-      <input type="file" @change="handleFile" required />
+      <input type="file" @change="handleFile" required /><br><br>
 
       <button type="submit">Upload Document</button>
     </form>
