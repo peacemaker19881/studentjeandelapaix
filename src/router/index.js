@@ -15,14 +15,19 @@ const routes = [
   // ADMIN
   { path: "/register-student", component: StudentRegistration, meta: { roles: ["admin"] } },
   { path: "/register-trainer", component: TrainerRegistration, meta: { roles: ["admin"] } },
+  /*
   { path: "/trainers", component: TrainerList, meta: { roles: ["admin"] } },
   { path: "/students", component: StudentList, meta: { roles: ["admin", "trainer"] } },
   { path: "/documents", component: Documents, meta: { roles: ["admin", "student"] } },
-  
+*/
   // TRAINER
   { path: "/upload", component: UploadDocuments, meta: { roles: ["trainer"] } },
 
   // SHARED
   { path: "/aboutus", component: AboutusComponent, meta: { roles: ["trainer", "student"] } }
-];
+]
+const router = createRouter({
+  history: createWebHistory(),
+  routes
+})
 export default routes
