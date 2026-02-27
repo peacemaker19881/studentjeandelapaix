@@ -9,6 +9,7 @@
         <li>Accounting</li>
         <li>Computer system</li>
         <li>Software Development</li>
+        <li> Networking</li>
         </ol>
     </div>
 </template>
